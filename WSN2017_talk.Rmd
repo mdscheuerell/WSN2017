@@ -37,6 +37,7 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 # Acknowledgments
 
+.pull-left[
 * Eli Holmes (NOAA)
 
 * Brice Semmens (Scripps)
@@ -44,6 +45,17 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 * Jim Thorson (NOAA)
 
 * Eric Ward (NOAA)
+]
+
+.pull-right[
+* Eli Holmes (NOAA)
+
+* Brice Semmens (Scripps)
+
+* Jim Thorson (NOAA)
+
+* Eric Ward (NOAA)
+]
 
 ---
 
