@@ -24,8 +24,7 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 ---
 
-# Acknowledgments
-## WSN
+# Acknowledgments - WSN
 
 .blue-text[
 * Jenn Caselle
@@ -35,8 +34,7 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 ---
 
-# Acknowledgments
-## Colleagues
+# Acknowledgments - Colleagues
 
 .blue-text[
 * Eli Holmes (NOAA)
@@ -52,11 +50,13 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 ---
 
-class: frimg, center, inverse
+class: frimg, center 
 background-image: url(figs/mit_fire_hose.jpg)
 background-size: cover
 
-# Is anyone thirsty?
+# .white-text[Is anyone thirsty?]
+
+.botleft.white-text[Source: blog.fireflies.ai]
 
 ---
 
@@ -101,9 +101,7 @@ background-size: cover
 
 ---
 
-# Methods for ecology are expanding
-
-### *Methods in Ecology and Evolution* (Est. 2010)
+## *Methods in Ecology and Evolution* (Est. 2010)
 
 ```{r timeseries, dpi=300, fig.height=4, fig.width=6, out.height="80%", out.width="80%", fig.align='center', echo=FALSE}
 mee <- data.frame(yr=seq(2010,2016),
@@ -167,15 +165,46 @@ class: center, middle, inverse
 
 # 1. State model
 
-## Describes the true states of nature over time
+## Describes the .blue-text[true state(s) of nature] over time/space
+
+```{r state_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+#library(shape)
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## boundaries
+ss <- 5
+nn <- 7
+rr <- ss*3
+cc <- ss*nn
+## mid-points
+xm <- ss/2 + seq(0,cc-ss,ss)
+ymt <- rr - ss/2
+ymb <- ss/2
+## arrow locs
+x0t <- seq(ss, by=2*ss, len=3)
+x1t <- x0t + ss
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row: state
+symbols(x=xm[c(1,3,5,7)], y=rep(ymt,4), circles=rep(ss/2,4),
+        lty="solid",  fg=NA, bg="#488fdf",
+        inches=FALSE, add=TRUE, lwd=3)
+text("Truth", x=-ss, y=ymt, adj=c(0,0.5), xpd=NA,
+     cex=2, col="#488fdf")
+arrows(x0=x0t,x1=x1t,y0=ymt, col="#488fdf", lwd=3, length=0.12)
+## time/space
+arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3+ss*2,
+       length=0.12, lwd=3, xpd=NA)
+text("Time/space", x=cc/2, y=-ss/2+ss*2, xpd=NA, pos=1, cex=2)
+```
 
 ---
 
-class: frimg, inverse
+class: frimg
 background-image: url(figs/sockeye.jpg)
 background-size: cover
 
-# Observing nature can be easy
+# .white-text[Observing nature can be easy]
 
 ---
 
@@ -187,11 +216,11 @@ background-size: cover
 
 ---
 
-class: frimg, inverse
+class: frimg
 background-image: url(figs/sockeye.jpg)
 background-size: cover
 
-# Observing nature can be hard
+# .white-text[Observing nature can be hard]
 
 ---
 
@@ -205,9 +234,91 @@ background-size: cover
 
 # 2. Observation model
 
-## Data = Truth + Error
+## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
 
-.center.middle.large[Data = Truth + Error]
+### .purple-text[Things we observe] = .blue-text[Things nature does] + .red-text[Things we miss]
 
+---
+
+# 2. Observation model
+
+## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
+
+```{r obs_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## arrow locs
+x0t <- seq(ss, by=2*ss, len=3)
+x1t <- x0t + ss
+y0b <- rr - ss
+y1b <- ss
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row: state
+symbols(x=xm[c(1,3,5,7)], y=rep(ymt,4), circles=rep(ss/2,4),
+        lty="solid",  fg=NA, bg="#488fdf",
+        inches=FALSE, add=TRUE, lwd=3)
+text("Truth", x=-ss, y=ymt, adj=c(0,0.5), xpd=NA,
+     cex=2, col="#488fdf")
+## arrows
+arrows(x0=x0t,x1=x1t,y0=ymt, col="#488fdf", lwd=3, length=0.12)
+## bottom row: obs
+symbols(x=xm[c(1,3,5,7)], y=rep(ss/2,4), circles=rep(ss/2,4),
+        lty="solid",  fg=NA, bg="#844870",
+        inches=FALSE, add=TRUE, lwd=3)
+text("Data", x=-ss, y=ss/2, adj=c(0,0.5), xpd=NA,
+     cex=2, col="#844870")
+## arrows
+arrows(x0=xm[c(1,3,5,7)], y0=y0b, y1=y1b,
+       col="#c10101", lwd=3, length=0.12)
+## time/space
+arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3,
+       length=0.12, lwd=3, xpd=NA)
+text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
+```
+
+---
+
+# 2. Observation model
+
+## Missing data are definitely OK
+
+```{r obs_NA, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## arrow locs
+x0t <- seq(ss, by=2*ss, len=3)
+x1t <- x0t + ss
+y0b <- rr - ss
+y1b <- ss
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row: state
+symbols(x=xm[c(1,3,5,7)], y=rep(ymt,4), circles=rep(ss/2,4),
+        lty="solid",  fg=NA, bg="#488fdf",
+        inches=FALSE, add=TRUE, lwd=3)
+text("Truth", x=-ss, y=ymt, adj=c(0,0.5), xpd=NA,
+     cex=2, col="#488fdf")
+## arrows
+arrows(x0=x0t,x1=x1t,y0=ymt, col="#488fdf", lwd=3, length=0.12)
+## bottom row: obs
+symbols(x=xm[c(1,3,7)], y=rep(ss/2,3), circles=rep(ss/2,3),
+        lty="solid",  fg=NA, bg="#844870",
+        inches=FALSE, add=TRUE, lwd=3)
+text("Data", x=-ss, y=ss/2, adj=c(0,0.5), xpd=NA,
+     cex=2, col="#844870")
+## NA's
+symbols(x=xm[5], y=ss/2, circles=ss/2,
+        lty="solid",  fg=NA, bg="#656565",
+        inches=FALSE, add=TRUE, lwd=3)
+text("NA", x=xm[5], y=ss/2, cex=1.8, col="#ffffff")
+## arrows
+arrows(x0=xm[c(1,3,7)], y0=y0b, y1=y1b,
+       col="#c10101", lwd=3, length=0.12)
+## time/space
+arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3,
+       length=0.12, lwd=3, xpd=NA)
+text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
+```
 
 
