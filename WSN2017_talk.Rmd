@@ -100,6 +100,16 @@ background-size: cover
 
 ---
 
+# Lots of advances in methods
+
+* .large.blue-text[Genetics (genomic technologies)]
+
+* .large.blue-text[Remote sensing (satellites, camera traps)]
+
+* .large.blue-text[Statistics (satellites, camera traps)]
+
+---
+
 ## *Methods in Ecology and Evolution* (Est. 2010)
 
 ```{r timeseries, dpi=300, fig.height=4, fig.width=6, out.height="80%", out.width="80%", fig.align='center', echo=FALSE}
@@ -208,11 +218,9 @@ text("Time/space", x=cc/2, y=-ss/2+ss*2, xpd=NA, pos=1, cex=2)
 
 ---
 
-class: frimg
-background-image: url(figs/sockeye.jpg)
-background-size: cover
+class: center, middle, inverse
 
-# .white-text[Observing nature can be easy]
+# Observing nature can be easy
 
 ---
 
@@ -224,11 +232,9 @@ background-size: cover
 
 ---
 
-class: frimg
-background-image: url(figs/sockeye.jpg)
-background-size: cover
+class: center, middle, inverse
 
-# .white-text[Observing nature can be hard]
+# Or observing nature can be hard
 
 ---
 
@@ -326,6 +332,14 @@ arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3,
        length=0.12, lwd=3, xpd=NA)
 text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 ```
+
+---
+
+# Many software options
+
+## Canned **R** packages (.blue-text[`MARSS`, `dlm`, `vars`])
+
+## Brew-your-own (.blue-text[`JAGS`, `Stan`, `greta`])
 
 ---
 
