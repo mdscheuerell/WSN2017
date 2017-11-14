@@ -64,8 +64,7 @@ background-size: cover
 
 1. Background
 .small[
-* Early attempts at synthesis
-* Mathematical flute music
+* Early mathematical flute music
 * Emergence of cool stuff
 * The future of cool stuff
 * Can we get through all of this?
@@ -79,8 +78,8 @@ background-size: cover
 ]
 3. Results
 .small[
-* Plots, plots, plots
-* Some silly tangent
+* Some plots
+* Unrelated tangent
 * More plots
 * Really hard to read table
 * Horrendogram
@@ -117,8 +116,8 @@ bp <- barplot(height=rep(NA,7), las=1, ylim=c(0,13),
               ylab="",
               cex.lab=1.4, yaxt="n")
 abline(h=seq(0,12,3), col="gray")
-text(-0.5, 1.15*par()$usr[4], cex=1.4,
-     "Issues per year", xpd=NA, adj=c(0,0.5))
+text(0, 1.15*par()$usr[4], cex=1.4,
+     "Issues per year", xpd=NA, pos=4)
 barplot(height=mee$issues, las=1, add=TRUE,
               col="#488fdf", space=1, ylab="Issues per year",
               cex.lab=1.4, yaxt="n")
@@ -128,8 +127,8 @@ barplot(height=rep(NA,7), las=1,
         col="darkblue", space=1, ylim=c(0,9),
         ylab="", cex.lab=1.4, yaxt="n")
 abline(h=seq(0,8,2), col="gray")
-text(-0.5, 1.1*par()$usr[4], cex=1.4,
-     "Impact factor", xpd=NA, adj=c(0,0.5))
+text(0, 1.1*par()$usr[4], cex=1.4,
+     "Impact factor", xpd=NA, pos=4)
 barplot(height=mee$imp, las=1, names.arg=mee$yr, add=TRUE,
         col="#ff8100", space=1, cex.names=1.2,
         ylab="", cex.lab=1.4, yaxt="n")
@@ -168,7 +167,6 @@ class: center, middle, inverse
 ## Describes the .blue-text[true state(s) of nature] over time/space
 
 ```{r state_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
-#library(shape)
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
 ## boundaries
 ss <- 5
@@ -197,6 +195,16 @@ arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3+ss*2,
        length=0.12, lwd=3, xpd=NA)
 text("Time/space", x=cc/2, y=-ss/2+ss*2, xpd=NA, pos=1, cex=2)
 ```
+
+---
+
+# Examples of state models
+
+* .large.blue-text[Individual movements]
+
+* .large.blue-text[Species interactions]
+
+* .large.blue-text[Joint species distributions]
 
 ---
 
@@ -234,9 +242,7 @@ background-size: cover
 
 # 2. Observation model
 
-## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
-
-### .purple-text[Things we observe] = .blue-text[Things nature does] + .red-text[Things we miss]
+## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] + .red-text[Stuff we miss]
 
 ---
 
@@ -321,4 +327,109 @@ arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3,
 text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 ```
 
+---
+
+class: frimg
+background-image: url(figs/snake_oil.jpg)
+background-size: cover
+
+---
+
+# State model for species interactions
+
+### Number today is a function of .gray-text[number yesterday]
+
+```{r MAR_diag_1, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## boundaries
+ss <- 5
+nn <- 8
+rr <- ss*3
+cc <- ss*nn
+## mid-points
+xm <- seq(5,cc-ss,rr)
+ymt <- rr - ss/2
+ymb <- ss/2
+## arrow locs
+y0 <- rr - ss
+y1 <- ss
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row
+symbols(x=xm[2], y=ymt, rectangles=matrix(c(2*ss,ss),1,2),
+        lty="solid",  bg="#656565", fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text("Number", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=3)
+text("yesterday", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=1)
+## arrows
+arrows(x0=xm[2], y0=y0, y1=y1,
+       col="#656565", lwd=3, length=0.12)
+## bottom row: obs
+symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
+        lty="solid",  bg="#488fdf", fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
+text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
+```
+
+---
+
+# State model for species interactions
+
+### Number today is a function of .red-text[predators], .orange-text[prey], .purple-text[competitors]
+
+```{r MAR_diag_2, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row
+symbols(x=xm, y=rep(ymt,3),
+        rectangles=matrix(c(2*ss,ss),3,2,byrow=TRUE),
+        lty="solid",  bg=c("#c10101","#ff8100","#844870"),
+        fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text(c("Predators","Prey","Competitors"),
+     x=xm, y=rep(ymt,3), cex=1.7, col="#ffffff", pos=3)
+text("yesterday", x=xm, y=rep(ymt,3), cex=1.7, col="#ffffff", pos=1)
+## arrows
+arrows(x0=ss*seq(2,6,2), x1=ss*seq(3,5),
+       y0=y0, y1=y1,
+       col=c("#c10101","#ff8100","#844870"), lwd=3, length=0.12)
+## bottom row: obs
+symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
+        lty="solid",  bg="#488fdf", fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
+text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
+```
+
+---
+
+# State model for species interactions
+
+### Number today is a function of .green-text[external forces] in the past
+
+```{r MAR_diag_3, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
+par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
+## empty plot space
+plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
+     xaxt="n", yaxt="n", bty="n")
+## top row
+symbols(x=xm[2], y=ymt, rectangles=matrix(c(2*ss,ss),1,2),
+        lty="solid",  bg="#339933", fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text("External", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=3)
+text("forces", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=1)
+## arrows
+arrows(x0=xm[2], y0=y0, y1=y1,
+       col="#339933", lwd=3, length=0.12)
+## bottom row: obs
+symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
+        lty="solid",  bg="#488fdf", fg=NA,
+        inches=FALSE, add=TRUE, lwd=3)
+text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
+text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
+```
 
