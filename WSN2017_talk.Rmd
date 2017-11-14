@@ -60,6 +60,47 @@ background-size: cover
 
 ---
 
+# A brief outline
+
+1. Background
+.small[
+* Early attempts at synthesis
+* Mathematical flute music
+* Emergence of cool stuff
+* The future of cool stuff
+* Can we get through all of this?
+]
+2. Methods
+.small[
+* Old school stats
+* New school stats
+* Software improvements
+* Hardware is not soft
+]
+3. Results
+.small[
+* Plots, plots, plots
+* Some silly tangent
+* More plots
+* Really hard to read table
+* Horrendogram
+]
+4. Discussion
+.small[
+* So much inference
+* There is too much here
+* Where is this headed?
+* When is he done?
+* Did we get through all of this?
+]
+5. Supplement
+.small[
+* There's more?!
+* Who does this in a talk?
+]
+
+---
+
 # Methods for ecology are expanding
 
 ### *Methods in Ecology and Evolution* (Est. 2010)
@@ -72,7 +113,7 @@ mee <- data.frame(yr=seq(2010,2016),
 pd <- as.matrix(mee[,-1])
 
 par(mfrow=c(2,1), mai=c(0.3,0.4,0.3,0), omi=c(0.1,0,0,0))
-## top
+## top panel
 bp <- barplot(height=rep(NA,7), las=1, ylim=c(0,13),
               col="steelblue", space=1,
               ylab="",
@@ -84,7 +125,7 @@ barplot(height=mee$issues, las=1, add=TRUE,
               col="#488fdf", space=1, ylab="Issues per year",
               cex.lab=1.4, yaxt="n")
 axis(2, at=seq(0,12,3), las=1, tick=FALSE, cex.axis=1.2)
-## bottom
+## bottom panel
 barplot(height=rep(NA,7), las=1,
         col="darkblue", space=1, ylim=c(0,9),
         ylab="", cex.lab=1.4, yaxt="n")
@@ -96,8 +137,77 @@ barplot(height=mee$imp, las=1, names.arg=mee$yr, add=TRUE,
         ylab="", cex.lab=1.4, yaxt="n")
 axis(2, at=seq(0,8,2), las=1, tick=FALSE, cex.axis=1.2)
 text(bp[1],1,"NA",col="darkgray", adj=c(0.5,0.5))
-
 ```
+
+---
+
+class: center, middle, inverse
+
+# Q: What is a hierarchical model?
+
+# A: It's a model within a model.
+
+---
+
+# Benefits of hierarchical models
+
+* Missing data are OK
+
+* Borrow from the data rich to inform the data poor
+
+---
+
+class: center, middle, inverse
+
+# Q: What is a state-space model?
+
+# A: It's a model with 2 components.
+
+---
+
+# 1. State model
+
+## Describes the true states of nature over time
+
+---
+
+class: frimg, inverse
+background-image: url(figs/sockeye.jpg)
+background-size: cover
+
+# Observing nature can be easy
+
+---
+
+class: frimg, bottom, right
+background-image: url(figs/sockeye.jpg)
+background-size: cover
+
+# .white-text[How many salmon are there?]
+
+---
+
+class: frimg, inverse
+background-image: url(figs/sockeye.jpg)
+background-size: cover
+
+# Observing nature can be hard
+
+---
+
+class: frimg, bottom, right
+background-image: url(figs/sockeye.jpg)
+background-size: cover
+
+# .white-text[How many mayflies are there?]
+
+---
+
+# 2. Observation model
+
+## Data = Truth + Error
+
+.center.middle.large[Data = Truth + Error]
 
 
 
