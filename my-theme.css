@@ -55,6 +55,12 @@ a, a > code {
   padding-right: 4em;
   font-size: 90%;
 }
+.footnoteSm {
+  position: absolute;
+  bottom: 2em;
+  padding-right: 4em;
+  font-size: 75%;
+}
 .botleft {
   position: fixed;
   bottom: 2em;

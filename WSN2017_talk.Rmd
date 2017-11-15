@@ -52,7 +52,7 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 class: bottom
 
-#  Find this slide deck
+#  Slide deck available at
 
 ## https://github.com/mdscheuerell/WSN2017
 
@@ -97,10 +97,9 @@ background-size: cover
 4. Discussion
 .small[
 * So much inference
-* There is too much here
+* Did we get through all of this?
 * Where is this headed?
 * When is he done?
-* Did we get through all of this?
 ]
 5. Supplement
 .small[
@@ -110,7 +109,7 @@ background-size: cover
 
 ---
 
-# Many advances in available methods
+# Many advances in methods for naturalists
 
 ## .blue-text[Genetics] (genomic selection, eDNA)
 
@@ -286,13 +285,13 @@ background-size: cover
 
 # Part 2: Observation model
 
-## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] + .red-text[Stuff we miss]
+## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &#177; .red-text[Stuff we miss]
 
 ---
 
 # Part 2: Observation model
 
-## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
+## .purple-text[Data] = .blue-text[Truth] &#177; .red-text[Errors]
 
 ```{r obs_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -331,7 +330,7 @@ text("Time or space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 # Part 2: Observation model
 
-## .gray-text[Missing data are definitely OK]
+## .gray-text[Missing data] are easily accommodated
 
 ```{r obs_NA, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -373,11 +372,19 @@ text("Time or space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 ---
 
+class: inverse, center, middle
+
+# "I'm sold, but how do I actually do this?"
+
+---
+
 # Many software options:
 
-## .blue-text[Canned **R** packages] (MARSS, dlm, vars)
+## .blue-text[Canned **R** packages] (MARSS<sup>1</sup>, dlm, vars)
 
 ## .blue-text[Brew your own] (JAGS, Stan, greta)
+
+.footnoteSm[<sup>1</sup>See Holmes, Ward & Scheuerell (2014) for *lots* of worked examples]
 
 ---
 
