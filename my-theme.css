@@ -70,13 +70,13 @@ a, a > code {
 .futnote {
   position: fixed;
   bottom: 2em;
-  left: 5em;
+  left: 4em;
   font-size: 90%;
 }
 .citation {
   position: fixed;
   bottom: 2em;
-  right: 5em;
+  right: 4em;
   font-size: 90%;
 }
 .remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }

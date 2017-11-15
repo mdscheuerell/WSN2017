@@ -48,14 +48,6 @@ _Northwest Fisheries Science Center&lt;br&gt;National Oceanic and Atmospheric Ad
 
 ---
 
-class: bottom
-
-#  Slide deck available at
-
-## https://github.com/mdscheuerell/WSN2017
-
----
-
 class: frimg, center 
 background-image: url(figs/mit_fire_hose.jpg)
 background-size: cover
@@ -109,11 +101,13 @@ background-size: cover
 
 # Many advances in methods for naturalists
 
-## .blue-text[Genetics] (genomic selection, eDNA)
+.blue-text[
+## Genetics
 
-## .blue-text[Remote sensing] (satellites, camera traps)
+## Remote sensing
 
-## .blue-text[Statistics] (hierarchical models)
+## Statistics
+]
 
 ---
 
@@ -152,7 +146,21 @@ class: center, middle, inverse
 
 ---
 
-# Examples of hierarchical models
+# Applications of hierarchical models
+
+.blue-text[
+## Individual movements
+
+## Species interactions
+
+## Joint species distributions
+
+## Meta-analyses
+]
+
+---
+
+# Hierarchical models also masquerade as
 
 .blue-text[
 ## Nested data models
@@ -165,8 +173,7 @@ class: center, middle, inverse
 
 class: center, middle, inverse
 
-# A state-space model is simply
-# a model with 2 parts
+# A state-space model has 2 parts
 
 ---
 
@@ -178,15 +185,21 @@ class: center, middle, inverse
 
 ---
 
-# Examples of state models:
+# States of nature might be
 
 .blue-text[
-## Individual movements
-
-## Species interactions
-
-## Joint species distributions
+## Animal location
+## Species density
+## Age structure
+## Reproductive status
 ]
+
+---
+
+class: center, middle, inverse
+
+# Revealing the state of nature
+# requires some observations
 
 ---
 
@@ -220,29 +233,60 @@ background-size: cover
 
 # Part 2: Observation model
 
-## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &amp;#177; .red-text[Stuff we miss]
-
----
-
-# Part 2: Observation model
-
 ## .purple-text[Data] = .blue-text[Truth] &amp;#177; .red-text[Errors]
 
 &lt;img src="WSN2017_talk_files/figure-html/obs_diag-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Part 2: Observation model
+# Advantages of hierarchical models
 
-## .gray-text[Missing data] are easily accommodated
+## 1. Can combine many different .purple-text[data types]
+
+.blue-text[
+### Changes in observers or sensors
+
+### Varying survey locations &amp; effort
+
+### Direct &amp; remote sampling  
+]
+
+---
+
+# Advantages of hierarchical models
+
+## 2. .gray-text[Missing data] are easily accommodated
 
 &lt;img src="WSN2017_talk_files/figure-html/obs_NA-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
+class: frimg
+
+# Advantages of hierarchical models
+
+## 3. Improved accuracy &amp; precision
+
+.img-left-land[![](figs/Jonsen2016.png)]
+
+---
+
+# Advantages of hierarchical models
+
+## 4. Rather flexible
+
+.center.blue-text[
+### This simple model can be used for 5+ unique applications!
+]
+
+`$$\mathbf{x}_t = \mathbf{B} \mathbf{x}_{t-1} + \mathbf{w}_t \\
+  \mathbf{y}_t = \mathbf{Z} \mathbf{x}_t + \mathbf{v}_t$$`
+
+---
+
 class: inverse, center, middle
 
-# "I'm sold, but how do I actually do this?"
+# OK, but how do I actually do this?
 
 ---
 
@@ -252,7 +296,7 @@ class: inverse, center, middle
 
 ## .blue-text[Brew your own] (JAGS, Stan, greta)
 
-.footnoteSm[&lt;sup&gt;1&lt;/sup&gt;See Holmes, Ward &amp; Scheuerell (2014) for *lots* of worked examples]
+.footnoteSm.gray-text[&lt;sup&gt;1&lt;/sup&gt;See Holmes, Ward &amp; Scheuerell (2014) for *lots* of worked examples]
 
 ---
 
@@ -291,6 +335,26 @@ background-size: cover
 .futnote.blue-text[@mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
+
+---
+
+class: right
+
+#  Slide deck available at
+
+## https://github.com/mdscheuerell/WSN2017
+
+---
+
+class: invers, middle, center
+
+# EXTRA SLIDES
+
+---
+
+# Part 2: Observation model
+
+## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &amp;#177; .red-text[Stuff we miss]
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
