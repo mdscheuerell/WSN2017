@@ -18,35 +18,43 @@ class: center, middle
 ## Mark Scheuerell
 _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_
 
-.futnote.blue-text[mark.scheuerell@noaa.gov]
+.futnote.blue-text[@mark_scheuerell]
 
-.citation.blue-text[@mark_scheuerell]
+.citation.blue-text[\#WSN2017]
 
 ---
 
 # Acknowledgments - WSN
 
-.blue-text[
-* Jenn Caselle
+.large.blue-text[
+## Jenn Caselle
 
-* Bryan Gaylord
+## Bryan Gaylord
 ]
 
 ---
 
-# Acknowledgments - Colleagues
+# Acknowledgments - colleagues
 
-.blue-text[
-* Eli Holmes (NOAA)
+.large.blue-text[
+## Eli Holmes (NOAA)
 
-* Jim Thorson (NOAA)
+## Jim Thorson (NOAA)
 
-* Eric Ward (NOAA)
+## Eric Ward (NOAA)
 
-* Steve Katz (WSU)
+## Steve Katz (WSU)
 
-* Brice Semmens (Scripps)
+## Brice Semmens (Scripps)
 ]
+
+---
+
+class: bottom
+
+#  Find this slide deck
+
+## https://github.com/mdscheuerell/WSN2017
 
 ---
 
@@ -54,9 +62,11 @@ class: frimg, center
 background-image: url(figs/mit_fire_hose.jpg)
 background-size: cover
 
-# .white-text[Is anyone thirsty?]
+.white-text[
+# Who's thirsty?
+]
 
-.botleft.white-text[Source: blog.fireflies.ai]
+.botleft.small.white-text[Source: blog.fireflies.ai]
 
 ---
 
@@ -81,7 +91,7 @@ background-size: cover
 * Some plots
 * Unrelated tangent
 * More plots
-* Really hard to read table
+* Really hard-to-read table
 * Horrendogram
 ]
 4. Discussion
@@ -100,17 +110,19 @@ background-size: cover
 
 ---
 
-# Lots of advances in methods
+# Many advances in available methods
 
-* .large.blue-text[Genetics (genomic technologies)]
+## .blue-text[Genetics] (genomic selection, eDNA)
 
-* .large.blue-text[Remote sensing (satellites, camera traps)]
+## .blue-text[Remote sensing] (satellites, camera traps)
 
-* .large.blue-text[Statistics (satellites, camera traps)]
+## .blue-text[Statistics] (hierarchical models)
 
 ---
 
-## *Methods in Ecology and Evolution* (Est. 2010)
+class: center
+
+# *Methods in Ecology and Evolution* .small[(Est. 2010)]
 
 ```{r timeseries, dpi=300, fig.height=4, fig.width=6, out.height="80%", out.width="80%", fig.align='center', echo=FALSE}
 mee <- data.frame(yr=seq(2010,2016),
@@ -122,25 +134,28 @@ pd <- as.matrix(mee[,-1])
 par(mfrow=c(2,1), mai=c(0.3,0.4,0.3,0), omi=c(0.1,0,0,0))
 ## top panel
 bp <- barplot(height=rep(NA,7), las=1, ylim=c(0,13),
-              col="steelblue", space=1,
+              col="#488fdf", border=NA, space=1,
               ylab="",
               cex.lab=1.4, yaxt="n")
 abline(h=seq(0,12,3), col="gray")
 text(0, 1.15*par()$usr[4], cex=1.4,
      "Issues per year", xpd=NA, pos=4)
 barplot(height=mee$issues, las=1, add=TRUE,
-              col="#488fdf", space=1, ylab="Issues per year",
-              cex.lab=1.4, yaxt="n")
+        col="#488fdf", border=NA, space=1,
+        ylab="Issues per year",
+        cex.lab=1.4, yaxt="n")
 axis(2, at=seq(0,12,3), las=1, tick=FALSE, cex.axis=1.2)
 ## bottom panel
 barplot(height=rep(NA,7), las=1,
-        col="darkblue", space=1, ylim=c(0,9),
+        col="darkblue", border=NA, space=1,
+        ylim=c(0,9),
         ylab="", cex.lab=1.4, yaxt="n")
 abline(h=seq(0,8,2), col="gray")
 text(0, 1.1*par()$usr[4], cex=1.4,
      "Impact factor", xpd=NA, pos=4)
 barplot(height=mee$imp, las=1, names.arg=mee$yr, add=TRUE,
-        col="#ff8100", space=1, cex.names=1.2,
+        col="#ff8100", space=1, border=NA,
+        cex.names=1.2,
         ylab="", cex.lab=1.4, yaxt="n")
 axis(2, at=seq(0,8,2), las=1, tick=FALSE, cex.axis=1.2)
 text(bp[1],1,"NA",col="darkgray", adj=c(0.5,0.5))
@@ -150,31 +165,52 @@ text(bp[1],1,"NA",col="darkgray", adj=c(0.5,0.5))
 
 class: center, middle, inverse
 
-# Q: What is a hierarchical model?
-
-# A: It's a model within a model.
+# Lots of focus on *hierarchical models*
 
 ---
 
-# Benefits of hierarchical models
+class: frimg, center
+background-image: url(figs/horrified.jpg)
+background-size: cover
 
-* Missing data are OK
+---
 
-* Borrow from the data rich to inform the data poor
+# Hi·er·ar·chi·cal
+
+### *adjective*
+
+1. ## Arranged in an order
 
 ---
 
 class: center, middle, inverse
 
-# Q: What is a state-space model?
-
-# A: It's a model with 2 components.
+# A hierarchical model is simply
+# a model within a model
 
 ---
 
-# 1. State model
+# Examples of hierarchical models
 
-## Describes the .blue-text[true state(s) of nature] over time/space
+.blue-text[
+## Nested data models
+## Mixed models
+## Random-effects models
+## State-space models
+]
+
+---
+
+class: center, middle, inverse
+
+# A state-space model is simply
+# a model with 2 parts
+
+---
+
+# Part 1: State model
+
+## Describes the .blue-text[true state of nature] over time or space
 
 ```{r state_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -203,18 +239,20 @@ arrows(x0=x0t,x1=x1t,y0=ymt, col="#488fdf", lwd=3, length=0.12)
 ## time/space
 arrows(x0=ss/2, x1=cc-ss/2, y0=-ss/3+ss*2,
        length=0.12, lwd=3, xpd=NA)
-text("Time/space", x=cc/2, y=-ss/2+ss*2, xpd=NA, pos=1, cex=2)
+text("Time or space", x=cc/2, y=-ss/2+ss*2, xpd=NA, pos=1, cex=2)
 ```
 
 ---
 
-# Examples of state models
+# Examples of state models:
 
-* .large.blue-text[Individual movements]
+.blue-text[
+## Individual movements
 
-* .large.blue-text[Species interactions]
+## Species interactions
 
-* .large.blue-text[Joint species distributions]
+## Joint species distributions
+]
 
 ---
 
@@ -234,7 +272,7 @@ background-size: cover
 
 class: center, middle, inverse
 
-# Or observing nature can be hard
+# Observing nature can also be hard
 
 ---
 
@@ -246,13 +284,13 @@ background-size: cover
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
 ## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] + .red-text[Stuff we miss]
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
 ## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
 
@@ -291,9 +329,9 @@ text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
-## Missing data are definitely OK
+## .gray-text[Missing data are definitely OK]
 
 ```{r obs_NA, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -335,11 +373,11 @@ text("Time/space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 ---
 
-# Many software options
+# Many software options:
 
-## Canned **R** packages (.blue-text[`MARSS`, `dlm`, `vars`])
+## .blue-text[Canned **R** packages] (MARSS, dlm, vars)
 
-## Brew-your-own (.blue-text[`JAGS`, `Stan`, `greta`])
+## .blue-text[Brew your own] (JAGS, Stan, greta)
 
 ---
 
@@ -351,7 +389,7 @@ background-size: cover
 
 # State model for species interactions
 
-### Number today is a function of .gray-text[number yesterday]
+### Number today is a function of the .gray-text[number yesterday]
 
 ```{r MAR_diag_1, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -391,7 +429,7 @@ text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
 
 # State model for species interactions
 
-### Number today is a function of .red-text[predators], .orange-text[prey], .purple-text[competitors]
+### ...and the number of .red-text[predators], .orange-text[prey], .purple-text[competitors]
 
 ```{r MAR_diag_2, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -423,7 +461,7 @@ text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
 
 # State model for species interactions
 
-### Number today is a function of .green-text[external forces] in the past
+### ...and .green-text[external forces] at various times
 
 ```{r MAR_diag_3, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
@@ -446,4 +484,12 @@ symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
 text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
 text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
 ```
+
+---
+
+# In summary
+
+.futnote.blue-text[@mark_scheuerell]
+
+.citation.blue-text[\#WSN2017]
 

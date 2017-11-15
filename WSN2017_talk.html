@@ -16,35 +16,43 @@ class: center, middle
 ## Mark Scheuerell
 _Northwest Fisheries Science Center&lt;br&gt;National Oceanic and Atmospheric Administration&lt;br&gt;Seattle, WA_
 
-.futnote.blue-text[mark.scheuerell@noaa.gov]
+.futnote.blue-text[@mark_scheuerell]
 
-.citation.blue-text[@mark_scheuerell]
+.citation.blue-text[\#WSN2017]
 
 ---
 
 # Acknowledgments - WSN
 
-.blue-text[
-* Jenn Caselle
+.large.blue-text[
+## Jenn Caselle
 
-* Bryan Gaylord
+## Bryan Gaylord
 ]
 
 ---
 
-# Acknowledgments - Colleagues
+# Acknowledgments - colleagues
 
-.blue-text[
-* Eli Holmes (NOAA)
+.large.blue-text[
+## Eli Holmes (NOAA)
 
-* Jim Thorson (NOAA)
+## Jim Thorson (NOAA)
 
-* Eric Ward (NOAA)
+## Eric Ward (NOAA)
 
-* Steve Katz (WSU)
+## Steve Katz (WSU)
 
-* Brice Semmens (Scripps)
+## Brice Semmens (Scripps)
 ]
+
+---
+
+class: bottom
+
+#  Find this slide deck
+
+## https://github.com/mdscheuerell/WSN2017
 
 ---
 
@@ -52,9 +60,11 @@ class: frimg, center
 background-image: url(figs/mit_fire_hose.jpg)
 background-size: cover
 
-# .white-text[Is anyone thirsty?]
+.white-text[
+# Who's thirsty?
+]
 
-.botleft.white-text[Source: blog.fireflies.ai]
+.botleft.small.white-text[Source: blog.fireflies.ai]
 
 ---
 
@@ -79,7 +89,7 @@ background-size: cover
 * Some plots
 * Unrelated tangent
 * More plots
-* Really hard to read table
+* Really hard-to-read table
 * Horrendogram
 ]
 4. Discussion
@@ -98,17 +108,19 @@ background-size: cover
 
 ---
 
-# Lots of advances in methods
+# Many advances in available methods
 
-* .large.blue-text[Genetics (genomic technologies)]
+## .blue-text[Genetics] (genomic selection, eDNA)
 
-* .large.blue-text[Remote sensing (satellites, camera traps)]
+## .blue-text[Remote sensing] (satellites, camera traps)
 
-* .large.blue-text[Statistics (satellites, camera traps)]
+## .blue-text[Statistics] (hierarchical models)
 
 ---
 
-## *Methods in Ecology and Evolution* (Est. 2010)
+class: center
+
+# *Methods in Ecology and Evolution* .small[(Est. 2010)]
 
 &lt;img src="WSN2017_talk_files/figure-html/timeseries-1.png" width="80%" height="80%" style="display: block; margin: auto;" /&gt;
 
@@ -116,43 +128,66 @@ background-size: cover
 
 class: center, middle, inverse
 
-# Q: What is a hierarchical model?
-
-# A: It's a model within a model.
+# Lots of focus on *hierarchical models*
 
 ---
 
-# Benefits of hierarchical models
+class: frimg, center
+background-image: url(figs/horrified.jpg)
+background-size: cover
 
-* Missing data are OK
+---
 
-* Borrow from the data rich to inform the data poor
+# Hi·er·ar·chi·cal
+
+### *adjective*
+
+1. ## Arranged in an order
 
 ---
 
 class: center, middle, inverse
 
-# Q: What is a state-space model?
-
-# A: It's a model with 2 components.
+# A hierarchical model is simply
+# a model within a model
 
 ---
 
-# 1. State model
+# Examples of hierarchical models
 
-## Describes the .blue-text[true state(s) of nature] over time/space
+.blue-text[
+## Nested data models
+## Mixed models
+## Random-effects models
+## State-space models
+]
+
+---
+
+class: center, middle, inverse
+
+# A state-space model is simply
+# a model with 2 parts
+
+---
+
+# Part 1: State model
+
+## Describes the .blue-text[true state of nature] over time or space
 
 &lt;img src="WSN2017_talk_files/figure-html/state_diag-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Examples of state models
+# Examples of state models:
 
-* .large.blue-text[Individual movements]
+.blue-text[
+## Individual movements
 
-* .large.blue-text[Species interactions]
+## Species interactions
 
-* .large.blue-text[Joint species distributions]
+## Joint species distributions
+]
 
 ---
 
@@ -172,7 +207,7 @@ background-size: cover
 
 class: center, middle, inverse
 
-# Or observing nature can be hard
+# Observing nature can also be hard
 
 ---
 
@@ -184,13 +219,13 @@ background-size: cover
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
 ## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] + .red-text[Stuff we miss]
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
 ## .purple-text[Data] = .blue-text[Truth] + .red-text[Errors]
 
@@ -198,19 +233,19 @@ background-size: cover
 
 ---
 
-# 2. Observation model
+# Part 2: Observation model
 
-## Missing data are definitely OK
+## .gray-text[Missing data are definitely OK]
 
 &lt;img src="WSN2017_talk_files/figure-html/obs_NA-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
-# Many software options
+# Many software options:
 
-## Canned **R** packages (.blue-text[`MARSS`, `dlm`, `vars`])
+## .blue-text[Canned **R** packages] (MARSS, dlm, vars)
 
-## Brew-your-own (.blue-text[`JAGS`, `Stan`, `greta`])
+## .blue-text[Brew your own] (JAGS, Stan, greta)
 
 ---
 
@@ -222,7 +257,7 @@ background-size: cover
 
 # State model for species interactions
 
-### Number today is a function of .gray-text[number yesterday]
+### Number today is a function of the .gray-text[number yesterday]
 
 &lt;img src="WSN2017_talk_files/figure-html/MAR_diag_1-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
@@ -230,7 +265,7 @@ background-size: cover
 
 # State model for species interactions
 
-### Number today is a function of .red-text[predators], .orange-text[prey], .purple-text[competitors]
+### ...and the number of .red-text[predators], .orange-text[prey], .purple-text[competitors]
 
 &lt;img src="WSN2017_talk_files/figure-html/MAR_diag_2-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
 
@@ -238,9 +273,17 @@ background-size: cover
 
 # State model for species interactions
 
-### Number today is a function of .green-text[external forces] in the past
+### ...and .green-text[external forces] at various times
 
 &lt;img src="WSN2017_talk_files/figure-html/MAR_diag_3-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# In summary
+
+.futnote.blue-text[@mark_scheuerell]
+
+.citation.blue-text[\#WSN2017]
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
