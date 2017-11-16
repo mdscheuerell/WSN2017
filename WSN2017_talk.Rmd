@@ -1,6 +1,7 @@
 ---
 output:
   xaringan::moon_reader:
+    chakra: libs/remark-latest.min.js
     css: "my-theme.css"
     lib_dir: libs
     nature:
@@ -471,8 +472,8 @@ background-size: 70%
 
 class: frimg
 background-image: url(figs/suppl_eff.png)
-background-position: 50% 30%
-background-size: 100%
+background-position: 50% 35%
+background-size: 120%
 
 # Effect size is rather subtle
 
