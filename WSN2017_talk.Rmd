@@ -339,7 +339,7 @@ text("Time or space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 ## 1. Can combine many different .purple-text[data types]
 
-.blue-text[
+.purple-text[
 ### Changes in observers or sensors
 
 ### Varying survey locations & effort
@@ -435,6 +435,50 @@ class: inverse, center, middle
 class: frimg
 background-image: url(figs/snake_oil.jpg)
 background-size: cover
+
+---
+
+class: inverse, center, middle
+
+# SOME EXAMPLES
+
+---
+
+# Evaluating conservation interventions
+
+.blue-text[
+## How has 35+ years of hatchery supplementation affected the production of wild salmon?
+]
+
+---
+
+class: frimg
+background-image: url(figs/suppl_esu.png)
+background-size: 90%
+
+---
+
+class: frimg
+background-image: url(figs/suppl_ts.png)
+background-position: 70%
+background-size: 70%
+
+.blue-text[
+### Supplementation is ad hoc
+]
+
+---
+
+class: frimg
+background-image: url(figs/suppl_eff.png)
+background-position: 50% 30%
+background-size: 100%
+
+# Effect size is rather subtle
+
+.blue-text[
+## Probability of positive effect = 0.73
+]
 
 ---
 

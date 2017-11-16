@@ -21,7 +21,7 @@ a, a > code {
 .frimg img {
   background: transparent;
   padding: 7px;
-  border: 1px solid #636363;
+  border: 0 solid #636363;
 }
 .black-border {
   background: transparent;
