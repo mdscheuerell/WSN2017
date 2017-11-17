@@ -25,6 +25,15 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 ---
 
+class: frimg, center 
+background-image: url(figs/Mark_at_Rainbow_Cr.jpg)
+background-position: 50% 75%
+background-size: 50%
+
+# I was trained as a field ecologist
+
+---
+
 # Acknowledgments - WSN
 
 .large.blue-text[
@@ -50,20 +59,11 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 ---
 
 class: frimg, center 
-background-image: url(figs/Mark_at_Rainbow_Cr.jpg)
-background-position: 50% 75%
-background-size: 50%
-
-# I was trained as a field ecologist
-
----
-
-class: frimg, center 
 background-image: url(figs/mit_fire_hose.jpg)
 background-size: cover
 
 .white-text[
-# Who's thirsty?
+# I hope you're thirsty!
 ]
 
 ---
@@ -465,7 +465,7 @@ background-image: url(figs/suppl_scheme.png)
 background-position: 50% 85%
 background-size: 80%
 
-# Recovery option for Pacific salmon
+# Recovery options for Pacific salmon
 
 .blue-text[
 ## One strategy is hatchery supplementation
@@ -509,7 +509,7 @@ background-size: 120%
 ## Probability of positive effect = 0.73
 ]
 
-.citation.gray-text[Scheuerell et al. (2015) *Ecol* & *Evol* 5:2115–2125]
+.citationT.gray-text[Scheuerell et al. (2015) *Ecol* & *Evol* 5:2115–2125]
 
 ---
 
@@ -519,10 +519,10 @@ class: inverse, center, middle
 
 ---
 
-# Dimension reduction
+# High-dimension data
 
 .blue-text[
-## Many of you are familiar with PCA, CCA, NMDS
+## 
 ]
 
 ---
@@ -532,16 +532,16 @@ background-image: url(figs/sfa_1.png)
 background-position: 50% 30%
 background-size: 65%
 
-.citation.gray-text[Thorson et al. (2015) *Meth* *Ecol* & *Evol* 6:627–637]
+.citationT.gray-text[Thorson et al. (2015) *Meth* *Ecol* & *Evol* 6:627–637]
 
 ---
 
 class: frimg
 background-image: url(figs/sfa_2.png)
-background-position: 50% 35%
+background-position: 50% 30%
 background-size: 75%
 
-.citation.gray-text[Thorson et al. (2015) *Meth* *Ecol* & *Evol* 6:627–637]
+.citationT.gray-text[Thorson et al. (2015) *Meth* *Ecol* & *Evol* 6:627–637]
 
 ---
 
@@ -549,7 +549,7 @@ background-size: 75%
 
 ## .blue-text[Identifying metapopulation structure]
 
-### .right[Ward et al (2010) *J Appl Ecol* <\sp> 47:47–56]
+### .right[Ward et al (2010) *J Appl Ecol* &nbsp; 47:47–56]
 
 ---
 
@@ -557,7 +557,7 @@ background-size: 75%
 
 ## .blue-text[Reducing bias in estimates of density dependence] 
 
-### .right[Knape & de Valpine (2012) *Ecol Lett* 15:17–23]
+### .right[Knape & de Valpine (2012) *Ecol Lett* &nbsp; 15:17–23]
 
 ---
 
@@ -565,7 +565,7 @@ background-size: 75%
 
 ## .blue-text[Improving precision in species extinction forecasts] 
 
-### .right[See & Holmes (2015) *Ecol Appl* 25:1157–1165]
+### .right[See & Holmes (2015) *Ecol Appl* &nbsp; 25:1157–1165]
 
 ---
 

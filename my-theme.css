@@ -89,6 +89,12 @@ a, a > code {
   right: 4em;
   font-size: 90%;
 }
+.citationT {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  font-size: 90%;
+}
 .remark-code, .remark-inline-code { font-family: 'Source Code Pro', 'Lucida Console', Monaco, monospace; }
 .remark-code-line-highlighted     { background-color: #ffff88; }
 .remark-slide-number {
