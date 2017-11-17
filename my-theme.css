@@ -23,6 +23,11 @@ a, a > code {
   padding: 7px;
   border: 0 solid #636363;
 }
+.frimgB img {
+  background: transparent;
+  padding: 7px;
+  border: 2px solid #636363;
+}
 .black-border {
   background: transparent;
   padding: 7px;
@@ -66,6 +71,11 @@ a, a > code {
   bottom: 2em;
   left: 2em;
   font-size: 90%;
+}
+.topleft {
+  position: fixed;
+  top: 3em;
+  left: 2em;
 }
 .futnote {
   position: fixed;

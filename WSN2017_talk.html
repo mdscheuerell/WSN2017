@@ -27,7 +27,7 @@ _Northwest Fisheries Science Center&lt;br&gt;National Oceanic and Atmospheric Ad
 .large.blue-text[
 ## Jenn Caselle
 
-## Bryan Gaylord
+## Brian Gaylord
 ]
 
 ---
@@ -37,12 +37,21 @@ _Northwest Fisheries Science Center&lt;br&gt;National Oceanic and Atmospheric Ad
 .large.blue-text[
 ## Eli Holmes, Jim Thorson, Eric Ward (NOAA)
 
-## Eric Buhle (Quantitative Consultants, Inc)
+## Eric Buhle, Kevin See (Quantitative Consultants, Inc)
 
 ## Steve Katz, Stephanie Hampton (WSU)
 
 ## Brice Semmens (Scripps)
 ]
+
+---
+
+class: frimg, center 
+background-image: url(figs/Mark_at_Rainbow_Cr.jpg)
+background-position: 50% 75%
+background-size: 50%
+
+# I was trained as a field ecologist
 
 ---
 
@@ -82,9 +91,9 @@ background-size: cover
 ]
 4. Discussion
 .small[
+* Where is this headed?
 * So much inference
 * Did we get through all of this?
-* Where is this headed?
 * When is he done?
 ]
 5. Supplement
@@ -286,13 +295,15 @@ class: inverse, center, middle
 
 ---
 
-# Many software options:
+# Many software options
 
 ## .blue-text[Canned **R** packages] (MARSS&lt;sup&gt;1&lt;/sup&gt;, dlm, vars)
 
-## .blue-text[Brew your own] (JAGS, Stan, greta)
+## .blue-text[Code-your-own] (JAGS, Stan, greta)
 
-.footnoteSm.gray-text[&lt;sup&gt;1&lt;/sup&gt;See Holmes, Ward &amp; Scheuerell (2014) for *lots* of worked examples]
+.footnoteSm.gray-text[
+&lt;sup&gt;1&lt;/sup&gt;See Holmes, Ward &amp; Scheuerell (2014) for *lots* of worked examples
+]
 
 ---
 
@@ -304,14 +315,14 @@ background-size: cover
 
 class: inverse, center, middle
 
-# SOME EXAMPLES
+# AN EXAMPLE
 
 ---
 
 # Conservation of Pacific salmon
 
 .blue-text[
-## ~50% of salmon populations along the West Coast are listed under the Endangered Species Act
+## 50% of salmon populations along the US West Coast are listed under the Endangered Species Act
 ]
 
 ---
@@ -348,9 +359,8 @@ background-image: url(figs/suppl_ts.png)
 background-position: 70% 45%
 background-size: 70%
 
-.blue-text[
-### Supplementation is ad hoc,
-### which complicates analyses
+.topleft.blue-text[
+## Supplementation is ad hoc
 ]
 
 ---
@@ -365,6 +375,100 @@ background-size: 120%
 .blue-text[
 ## Probability of positive effect = 0.73
 ]
+
+.citation.gray-text[Scheuerell et al. (2015) *Ecol* &amp; *Evol* 5:2115–2125]
+
+---
+
+class: inverse, center, middle
+
+# ANOTHER EXAMPLE
+
+---
+
+# Dimension reduction
+
+.blue-text[
+## Many of you are familiar with PCA, CCA, NMDS
+]
+
+---
+
+class: frimg
+background-image: url(figs/sfa_1.png)
+background-position: 50% 30%
+background-size: 65%
+
+.citation.gray-text[Thorson et al. (2015) *Meth* *Ecol* &amp; *Evol* 6:627–637]
+
+---
+
+class: frimg
+background-image: url(figs/sfa_2.png)
+background-position: 50% 35%
+background-size: 75%
+
+.citation.gray-text[Thorson et al. (2015) *Meth* *Ecol* &amp; *Evol* 6:627–637]
+
+---
+
+# Other applications of hierarchical models
+
+## .blue-text[Identifying metapopulation structure]
+
+### .right[Ward et al (2010) *J Appl Ecol* &lt;\sp&gt; 47:47–56]
+
+---
+
+# Other applications of hierarchical models
+
+## .blue-text[Reducing bias in estimates of density dependence] 
+
+### .right[Knape &amp; de Valpine (2012) *Ecol Lett* 15:17–23]
+
+---
+
+# Other applications of hierarchical models
+
+## .blue-text[Improving precision in species extinction forecasts] 
+
+### .right[See &amp; Holmes (2015) *Ecol Appl* 25:1157–1165]
+
+---
+
+# In summary
+
+.futnote.blue-text[@mark_scheuerell]
+
+.citation.blue-text[\#WSN2017]
+
+---
+
+class: right
+
+#  Slide deck available at
+
+## https://github.com/mdscheuerell/WSN2017
+
+---
+
+# Sources for images
+
+## MIT drinking fountain: blog.fireflies.ai
+
+
+
+---
+
+class: invers, middle, center
+
+# EXTRA SLIDES
+
+---
+
+# Part 2: Observation model
+
+## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &amp;#177; .red-text[Stuff we miss]
 
 ---
 
@@ -389,42 +493,6 @@ background-size: 120%
 ### ...and .green-text[external forces] at various times
 
 &lt;img src="WSN2017_talk_files/figure-html/MAR_diag_3-1.png" width="100%" height="100%" style="display: block; margin: auto;" /&gt;
-
----
-
-# In summary
-
-.futnote.blue-text[@mark_scheuerell]
-
-.citation.blue-text[\#WSN2017]
-
----
-
-class: right
-
-#  Slide deck available at
-
-## https://github.com/mdscheuerell/WSN2017
-
----
-
-Sources for images
-
-## MIT drinking fountatine: blog.fireflies.ai
-
-
-
----
-
-class: invers, middle, center
-
-# EXTRA SLIDES
-
----
-
-# Part 2: Observation model
-
-## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &amp;#177; .red-text[Stuff we miss]
     </textarea>
 <script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
