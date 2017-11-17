@@ -25,15 +25,6 @@ _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administ
 
 ---
 
-class: frimg, center 
-background-image: url(figs/Mark_at_Rainbow_Cr.jpg)
-background-position: 50% 75%
-background-size: 50%
-
-# I was trained as a field ecologist
-
----
-
 # Acknowledgments - WSN
 
 .large.blue-text[
@@ -47,11 +38,11 @@ background-size: 50%
 # Acknowledgments - colleagues
 
 .large.blue-text[
-## Eli Holmes, Jim Thorson, Eric Ward (NOAA)
+## Elizabeth Holmes, Jim Thorson, Eric Ward (NOAA)
 
 ## Eric Buhle, Kevin See (Quantitative Consultants, Inc)
 
-## Steve Katz, Stephanie Hampton (WSU)
+## Stephanie Hampton, Steve Katz (WSU)
 
 ## Brice Semmens (Scripps)
 ]
@@ -104,6 +95,14 @@ background-size: cover
 * There's more?!
 * Who does this in a talk?
 ]
+
+---
+
+class: frimgB, center
+
+# I was trained as a field ecologist
+
+<img src="figs/Mark_at_Rainbow_Cr.jpg", alt="", height=440, width=440>
 
 ---
 
@@ -186,20 +185,6 @@ class: center, middle, inverse
 
 # A hierarchical model is simply
 # a model within a model
-
----
-
-# Applications of hierarchical models
-
-.blue-text[
-## Individual movements
-
-## Species interactions
-
-## Joint species distributions
-
-## Meta-analyses
-]
 
 ---
 
@@ -341,6 +326,12 @@ text("Time or space", x=cc/2, y=-ss/2, xpd=NA, pos=1, cex=2)
 
 ---
 
+class: inverse, center, middle
+
+# OK, but why bother?
+
+---
+
 # Advantages of hierarchical models
 
 ## 1. Can combine many different .purple-text[data types]
@@ -424,7 +415,7 @@ $$\mathbf{x}_t = \mathbf{B} \mathbf{x}_{t-1} + \mathbf{w}_t \\
 
 class: inverse, center, middle
 
-# OK, but how do I actually do this?
+# How do I actually do this?
 
 ---
 
@@ -509,7 +500,7 @@ background-size: 120%
 ## Probability of positive effect = 0.73
 ]
 
-.citationT.gray-text[Scheuerell et al. (2015) *Ecol* & *Evol* 5:2115–2125]
+.citationT.gray-text[Scheuerell et al. (2015) *Ecol* & *Evol* &nbsp; 5:2115–2125]
 
 ---
 
@@ -519,10 +510,28 @@ class: inverse, center, middle
 
 ---
 
-# High-dimension data
+# Emergence of high-dimension data
 
 .blue-text[
-## 
+## Remote sensing
+## Citizen science
+## Large-scale surveys
+]
+
+---
+
+# Groundfish surveys along the West Coast
+
+.blue-text[
+## Massive effort to assess stock status & set catch limits for 100+ species
+]
+
+---
+
+# Data reduction techniques
+
+.blue-text[
+## Can we detect a few common patterns in the data?
 ]
 
 ---
@@ -571,135 +580,31 @@ background-size: 75%
 
 # In summary
 
+.blue-text[
+## There is plethora of new methods for naturalists
+
+## Among them, hierarchical models show real promise
+
+## Software & hardware improvements open new doors
+]
+
 .futnote.blue-text[@mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
 
 ---
 
-class: right
+##  Slide deck
 
-#  Slide deck available at
+### https://github.com/mdscheuerell/WSN2017
 
-## https://github.com/mdscheuerell/WSN2017
+## Image sources
 
----
+.left.blue-text[
+### Drinking fountain: *Massachusetts Inst Tech*
+### Janet Leigh: *Paramount Studios*
+### Snake oil: *The Register*
+]
+.futnote.blue-text[@mark_scheuerell]
 
-# Sources for images
-
-## MIT drinking fountain: blog.fireflies.ai
-
-
-
----
-
-class: invers, middle, center
-
-# EXTRA SLIDES
-
----
-
-# Part 2: Observation model
-
-## .purple-text[Stuff we observe] = .blue-text[Stuff nature does] &#177; .red-text[Stuff we miss]
-
----
-
-# State model for species interactions
-
-### Number today is a function of the .gray-text[number yesterday]
-
-```{r MAR_diag_1, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
-par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
-## boundaries
-ss <- 5
-nn <- 8
-rr <- ss*3
-cc <- ss*nn
-## mid-points
-xm <- seq(5,cc-ss,rr)
-ymt <- rr - ss/2
-ymb <- ss/2
-## arrow locs
-y0 <- rr - ss
-y1 <- ss
-## empty plot space
-plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
-     xaxt="n", yaxt="n", bty="n")
-## top row
-symbols(x=xm[2], y=ymt, rectangles=matrix(c(2*ss,ss),1,2),
-        lty="solid",  bg="#656565", fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text("Number", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=3)
-text("yesterday", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=1)
-## arrows
-arrows(x0=xm[2], y0=y0, y1=y1,
-       col="#656565", lwd=3, length=0.12)
-## bottom row: obs
-symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
-        lty="solid",  bg="#488fdf", fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
-text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
-```
-
----
-
-# State model for species interactions
-
-### ...and the number of .red-text[predators], .orange-text[prey], .purple-text[competitors]
-
-```{r MAR_diag_2, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
-par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
-## empty plot space
-plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
-     xaxt="n", yaxt="n", bty="n")
-## top row
-symbols(x=xm, y=rep(ymt,3),
-        rectangles=matrix(c(2*ss,ss),3,2,byrow=TRUE),
-        lty="solid",  bg=c("#c10101","#ff8100","#844870"),
-        fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text(c("Predators","Prey","Competitors"),
-     x=xm, y=rep(ymt,3), cex=1.7, col="#ffffff", pos=3)
-text("yesterday", x=xm, y=rep(ymt,3), cex=1.7, col="#ffffff", pos=1)
-## arrows
-arrows(x0=ss*seq(2,6,2), x1=ss*seq(3,5),
-       y0=y0, y1=y1,
-       col=c("#c10101","#ff8100","#844870"), lwd=3, length=0.12)
-## bottom row: obs
-symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
-        lty="solid",  bg="#488fdf", fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
-text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
-```
-
----
-
-# State model for species interactions
-
-### ...and .green-text[external forces] at various times
-
-```{r MAR_diag_3, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
-par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
-## empty plot space
-plot(c(0,cc), c(0,rr), type="n", xlab="", ylab="",
-     xaxt="n", yaxt="n", bty="n")
-## top row
-symbols(x=xm[2], y=ymt, rectangles=matrix(c(2*ss,ss),1,2),
-        lty="solid",  bg="#339933", fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text("External", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=3)
-text("forces", x=xm[2], y=ymt, cex=1.8, col="#ffffff", pos=1)
-## arrows
-arrows(x0=xm[2], y0=y0, y1=y1,
-       col="#339933", lwd=3, length=0.12)
-## bottom row: obs
-symbols(x=xm[2], y=ymb, rectangles=matrix(c(2*ss,ss),1,2),
-        lty="solid",  bg="#488fdf", fg=NA,
-        inches=FALSE, add=TRUE, lwd=3)
-text("Number", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=3)
-text("today", x=xm[2], y=ymb, cex=1.8, col="#ffffff", pos=1)
-```
-
+.citation.blue-text[\#WSN2017]
