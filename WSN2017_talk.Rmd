@@ -421,12 +421,12 @@ class: inverse, center, middle
 
 # Many software options
 
-## .blue-text[Canned **R** packages] (MARSS<sup>1</sup>, dlm, vars)
+## .blue-text[Canned **R** packages] (MARSS<sup>*</sup>, dlm, vars)
 
 ## .blue-text[Code-your-own] (JAGS, Stan, greta)
 
 .footnoteSm.gray-text[
-<sup>1</sup>See Holmes, Ward & Scheuerell (2014) for *lots* of worked examples
+<sup>\*</sup>See Holmes, Ward & Scheuerell (2014) for *lots* of worked examples
 ]
 
 ---
@@ -605,6 +605,7 @@ background-size: 75%
 ### Janet Leigh: *Paramount Studios*
 ### Snake oil: *The Register*
 ]
+
 .futnote.blue-text[@mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
