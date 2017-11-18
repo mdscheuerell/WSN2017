@@ -291,6 +291,12 @@ background-size: cover
 
 ## .purple-text[Data] = .blue-text[Truth] &#177; .red-text[Errors]
 
+---
+
+# Part 2: Observation model
+
+## .purple-text[Data] = .blue-text[Truth] &#177; .red-text[Errors]
+
 ```{r obs_diag, dpi=300, fig.height=4, fig.width=8, out.height="100%", out.width="100%", fig.align='center', echo=FALSE, warning=FALSE}
 par(mai=c(0.8,0.8,0,0), omi=rep(0,4))
 ## arrow locs
