@@ -203,6 +203,9 @@ th, td { padding: 5px; }
     top: 0 !important;
     left: 0 !important;
   }
+  .white-text {
+    -webkit-print-color-adjust: exact;
+  }
 }
 
 /* yanone-kaffeesatz-regular - latin */
