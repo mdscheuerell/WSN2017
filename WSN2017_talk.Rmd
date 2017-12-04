@@ -19,7 +19,7 @@ class: center, middle
 ## Mark Scheuerell
 _Northwest Fisheries Science Center<br>National Oceanic and Atmospheric Administration<br>Seattle, WA_
 
-.futnote.blue-text[@mark_scheuerell]
+.futnote.blue-text[`r icon::fa("twitter")` @mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
 
@@ -594,7 +594,7 @@ background-size: 75%
 ## Software & hardware improvements open new doors
 ]
 
-.futnote.blue-text[@mark_scheuerell]
+.futnote.blue-text[`r icon::fa("twitter")` @mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
 
@@ -612,6 +612,6 @@ background-size: 75%
 ### Snake oil: *The Register*
 ]
 
-.futnote.blue-text[@mark_scheuerell]
+.futnote.blue-text[`r icon::fa("twitter")` @mark_scheuerell]
 
 .citation.blue-text[\#WSN2017]
